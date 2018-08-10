@@ -1,0 +1,47 @@
+
+//- MIXINS: photorama, slideshow 
+
+mixin photorama
+	// slider-photorama
+	.section-gallery.fotorama(data-nav='thumbs', data-thumbwidth='110.5', data-thumbheight='66', data-thumbmargin='10', data-thumbborderwidth='4')
+		img(src='img/photos/small/foto-19.jpg', alt='Фото салона красоты')
+		img(src='img/photos/small/foto-15.jpg', alt='Фото салона красоты')
+		img(src='img/photos/small/foto-13.jpg', alt='Фото салона красоты')
+		img(src='img/photos/small/foto-16.jpg', alt='Фото салона красоты')
+		img(src='img/photos/small/foto-23.jpg', alt='Фото салона красоты')
+		img(src='img/photos/small/foto-18.jpg', alt='Фото салона красоты')
+		img(src='img/photos/small/foto-19.jpg', alt='Фото салона красоты')
+		img(src='img/photos/small/foto-13.jpg', alt='Фото салона красоты')
+
+mixin slider-slick
+	// slider
+	section.sl-wrapper
+		.container
+			.row
+				.col-lg-12.col-md-12
+					.slider-wrap
+						.slider-item
+							img(src='img/slider/slide_1.jpg' alt='Слайдер 1')
+							.slider-wrap-content
+								a(href="#", title="Заголовок1") 
+									h2.slider-heading Транспортная логистика
+								p.slider-desc
+									| По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой.
+								button(type="button" class="slider-button") Подробнее
+						.slider-item
+							img(src='img/slider/slide_2.jpg' alt='Слайдер 1')
+							.slider-wrap-content
+								a(href="#", title="Заголовок2") 
+									h2.slider-heading Оптимизация и расчёт
+								p.slider-desc
+									| По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой.
+								button(type="button" class="slider-button") Подробнее
+						.slider-item
+							img(src='img/slider/slide_3.jpg' alt='Слайдер 1')
+							.slider-wrap-content
+								a(href="#", title="Заголовок3") 
+									h2.slider-heading Глобальная политика
+								p.slider-desc
+									| По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой.
+								button(type="button" class="slider-button") Подробнее
+

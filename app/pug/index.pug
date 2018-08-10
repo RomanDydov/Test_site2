@@ -1,0 +1,29 @@
+include ./mixins/mixin_head
+include ./mixins/mixin_header
+include ./mixins/mixin_preloaders
+include ./mixins/mixin_sliders
+include ./mixins/mixin_baners
+//-include ./mixin/filter-cont/mixin_filter_cont
+include ./mixins/mixin_form
+//-include ./mixin/coment/mixin_coment
+//-include ./mixin/partners/mixin_partners
+include ./mixins/mixin_footer
+
+
+
+doctype 
+html(lang='ru')
+	+head
+	body
+		+preloader_white
+		+header_menu
+		+slider-slick
+		+baners
+		+message_form
+		+footer
+		//-.top(title="Наверх")
+			i.fa.fa-angle-double-up
+		script(src="js/scripts.min.js")
+		script(src="js/common.js")
+
+

@@ -1,0 +1,368 @@
+
+@import "fonts"
+@import "libs"
+@import "vars"
+
+
+*::-webkit-input-placeholder
+	color: #827f7f
+	opacity: 1
+
+*:-moz-placeholder
+	color: #827f7f
+	opacity: 1
+
+*::-moz-placeholder
+	color: #827f7f
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #827f7f
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: rgba(0,0,0,.25)
+	border-color: rgba(0,0,0,.25)
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: "Roboto-Regular", sans-serif
+	overflow-x: hidden
+	opacity: 1
+	background-color: #f1f1f1
+	margin: 0
+
+ul
+	padding: 0
+	margin: 0
+li
+	list-style: none
+
+a
+	text-decoration: none
+	&:active
+		text-decoration: none
+	&:focus
+		text-decoration: none
+
+h1, h2, h3
+	font-weight: normal
+	margin: 0
+	padding: 0
+p
+	margin: 0
+	padding: 0
+	line-height: 1.5
+
+// preloader
+.preloader
+	background: none repeat scroll 0 0 $accent
+	height: 100%
+	width: 100%
+	left: 0
+	top: 0
+	position: fixed
+	transition: 1s all
+	opacity: 1
+	visibility: visible
+	z-index: 100
+	.loader
+		border: 10px solid #505050
+			radius: 50%
+		border-top-color: #9cb7cc 
+		height: 60px
+		width: 60px
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		animation: 1s spin infinite linear
+	&.done
+		opacity: 0
+		visibility: hidden
+@keyframes spin
+	from
+		transform: translate(-50%, -50%) rotate(0deg)
+	to
+		transform: translate(-50%, -50%) rotate(360deg)	
+
+// header
+.head-main
+	background-color: $accent
+	box-shadow: 0 4px 12px -5px rgba(0,0,0,0.5)
+	.logo
+		display: block
+		margin-top: 5px
+		img
+			width: 100px
+	.menu-nav
+		margin: 16px 0
+		li
+			display: inline-block
+			margin-right: 35px
+			a
+				color: #707071
+				+mt(.5s)
+				&:hover
+					color: #9e9e9e
+
+	// hidden menu style
+.hidden-mmu
+	background-color: rgba(0, 0, 0, 0.85)
+	display: none
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	right: 0
+	z-index: 99
+	> ul
+		padding: 0
+		position: relative
+		top: 22%
+		text-align: center
+		animation-duration: 0.01s
+		>li
+			a
+				color: #E9E9E9
+				display: block
+				position: relative
+				height: 30px
+				text-transform: uppercase
+				font-size: 12px
+				letter-spacing: 2px
+				
+.hidden-mmu ul li
+			&:nth-child(1) a
+				animation-delay: 0
+			&:nth-child(2) a
+				animation-delay: 0.1s
+			&:nth-child(3) a
+				animation-delay: 0.2s
+			&:nth-child(4) a
+				animation-delay: 0.3s
+			&:nth-child(5) a
+				animation-delay: 0.4s
+			&:nth-child(6) a
+				animation-delay: 0.5s
+			&:nth-child(7) a
+				animation-delay: 0.6s
+			&:nth-child(8) a
+				animation-delay: 0.7s		
+// sanndwich - buttom - menu
+.toggle-mnu
+	background-color: #1C1C1C
+	width: 60px
+	height: 60px
+	position: fixed
+	z-index: 100
+	border: none
+	right: 20px
+	top: 20px
+	span
+		display: block
+	.sandwich
+		width: 28px
+		height: 28px
+		position: absolute
+		top: 8px
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
+		z-index: 200
+		.sw-topper
+			position: relative
+			top: 0
+			width: 28px
+			height: 3px
+			background-color: $accent
+			border: none
+				radius: 4px 4px 4px 4px
+			transition: transform 0.5s, top 0.2s 
+			display: block
+		.sw-bottom
+			position: relative
+			top: 6.6px
+			width: 28px
+			height: 3px
+			background-color: $accent
+			border: none
+				radius: 4px 4px 4px 4px
+			transition: transform 0.5s, top 0.2s
+			transition-delay: 0.2s, 0s
+		.sw-footer
+			position: relative
+			top: 13.5px
+			width: 28px
+			height: 3px
+			background-color: $accent
+			border: none
+				radius: 4px 4px 4px 4px
+			transition: all 0.5s
+			transition-delay: 0.1s
+.sandwich.active
+	.sw-topper
+		top: 9px
+		transform: rotate(-45deg)
+	.sw-bottom
+		top: 6px
+		transform: rotate(45deg)
+	.sw-footer
+		opacity: 0
+		top: 0
+		transform: rotate(180deg)
+
+//slider 
+.sl-wrapper
+	margin-top: 40px
+	.slider-wrap
+		.slider-item
+			position: relative
+			.slider-wrap-content
+				position: absolute
+				top: 90px
+				right: 77px
+				width: 560px
+				color: $accent
+				a
+					color: $accent
+					text-decoration: none
+				.slider-heading
+					font-size: 29px
+					text-transform: uppercase
+				.slider-desc
+					font-size: 16px
+				.slider-button
+					background-color: inherit
+					color: $accent
+					font-size: 16px
+					border: 1px solid $accent
+						radius: 3px
+					margin-top: 20px
+					padding: 7px 36px
+					+mt(.5s)
+					&:hover
+						color: #000000
+						background-color: $accent
+// dots				
+.slick-dots 
+	li 
+		button
+			&::before
+				font-size: 10px	
+
+// baners
+.baners-blocks
+	margin-top: 10px
+	overflow: hidden
+	.baner-wrap
+		position: relative
+		&:hover .baner-img
+			filter: grayscale(55%)
+			transform: scale(1.15, 1.15)
+			filter: brightness(100%)
+		.baner-img-wrap
+			overflow: hidden
+			width: 100%
+			height: 100%
+		.baner-img
+			width: 100%
+			filter: brightness(65%)
+			+mt(.5s)	
+		.baner-content-wrap
+			position: absolute
+			top: 0
+			left: 0
+			padding: 17px 21px
+			.baner-heading
+				display: inline-block
+				color: #fff
+				text-transform: uppercase
+				line-height: 1.3
+				font-size: 16px
+				font-family: "RobotoCondensed-Bold", sans-serif
+				mt(.5s)
+				&:hover
+					text-decoration: none
+			.baner-desc
+				color: $accent
+				font-size: 14px
+				line-height: 1.3
+				margin-top: 5px
+		.baner-button
+			color: #c1c1c3
+			font-size: 14px
+			position: absolute
+			bottom: 14px
+			left: 20px
+			+mt(.5s)
+			.fa-arrow-right
+				margin-left: 5px
+			&:hover
+				color: $accent
+
+// form
+.form
+	.contact-form
+		margin: 45px 0
+		.form-heading
+			margin-bottom: 13px
+			font-size: 19px
+			font-weight: 600
+			text-transform: uppercase
+			color: #5d5c5c
+	label
+		input, textarea
+			display: block
+			width: 100%
+			margin-bottom: 18px
+			padding: 9px 20px
+			color: #827f7f
+			border: 1px solid #e2e2e2
+				radius: 4px
+	.form-button
+		display: block
+		color: #827f7f
+		background-color: $accent
+		border: 1px solid #e2e2e2
+			radius: 4px
+		padding: 9px 45px
+		+mt(.5s)
+		&:hover
+			background-color: #81a3e2
+			color: $accent
+
+// footer
+footer
+	background-color: $accent
+	.footer-content-wrap
+		padding: 45px 5px
+		color: #827f7f
+		.footer-text
+			font-size: 16px
+		.footer-buttom
+			overflow: hidden
+			margin-top: 30px
+			font-size: 14px
+			.footer-nav
+				text-align: center
+				ul
+					li
+						display: inline-block
+						margin-right: 15px
+			.footer-develop-site
+				p
+					display: inline-block
+					margin-right: 10px
+			a
+				color: #9a9a9a
+				+mt(.5s)
+				&:hover
+					color: #676565
+
+@import "media/_media.sass" 

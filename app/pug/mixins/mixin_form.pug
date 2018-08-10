@@ -1,0 +1,96 @@
+
+//- MIXIN  hidden_form, black_form, select_form
+mixin message_form
+	// form
+	section.form
+		.container
+			.row
+				.col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-3.col-sm-12.col-xs-12
+					form.contact-form
+						h3.form-heading Отправить заявку
+						// Hidden Required Fields
+						input(type='hidden', name='project_name', value='Site Name')
+						input(type='hidden', name='admin_email', value='romdemidoff@yandex.ru')
+						input(type='hidden', name='form_subject', value='Form Subject')
+						// END Hidden Required Fields
+						label
+							input(type='text', name='Имя', placeholder='Ваше имя')
+						label
+							input(type='text', name='Телефон', placeholder='Ваш телефон')
+						label
+							input(type='email', name='Почта', placeholder='E-mail')
+						label
+							textarea(type='text', name='Сообщение', placeholder='Ваше сообщение', rows="8")
+						button.form-button Отправить
+
+mixin hidden_form
+	// hidden_form
+	//-hidden MagnificPopap form
+	.hidden
+		form#callback.contact-form.callback-form
+			.success
+				p Спасибо за заявку!
+			// Hidden Required Fields
+			input(type='hidden', name='project_name', value='Site Name')
+			input(type='hidden', name='admin_email', value='admin@mail.com')
+			input(type='hidden', name='form_subject', value='Form Subject')
+			// END Hidden Required Fields
+			input(type='hidden', name='admin-data')
+			.contact-form-head
+				h4 Оставить заявку
+				p Оставьте заявку и мы свяжемся с вами в течение 20 минут.
+			label
+				span Ваше имя:
+				input(type='text', name='Имя', placeholder='Ваше имя...')
+			label
+				span Ваш телефон:
+				input(type='text', name='Телефон', placeholder='Ваш телефон...', required='')
+			.text-center
+				button.button.button-center Отправить
+
+mixin black_form
+	// black_form
+	section.s-form
+		.container-fluid
+			.row
+				.col-lg-12.col-md-12
+					form.contact-form-black
+						.contact-form-head
+							h4
+								span Оставьте ваше имя и номер телефона 
+							p Мы обязательно вам перезвоним.
+						// Hidden Required Fields
+						input(type='hidden', name='project_name', value='Site Name')
+						input(type='hidden', name='admin_email', value='admin@mail.com')
+						input(type='hidden', name='form_subject', value='Form Subject')
+						// END Hidden Required Fields
+						.form-wrap
+							label
+								input(type='text', class='input-black',name='Имя', placeholder='Имя...')
+							label
+								input(type='text', name='Телофон', class='input-black', placeholder='Телефон...', required='')
+						.text-center
+							button.button.button-center Отправить
+
+mixin select_form
+	form.callback
+		.success
+			span Спасибо за заявку!
+		// Hidden Required Fields
+		input(type='hidden', name='project_name', value='Site Name')
+		input(type='hidden', name='admin_email', value='admin@mail.com')
+		input(type='hidden', name='form_subject', value='Form Subject')
+		// END Hidden Required Fields
+		input(type='hidden', name='Страница', value='')
+		//-.callback-logo
+			img(src='img/logo-2.svg', alt='Смитлер - салон красоты')
+		.formhead Заказать услугу
+		p Оставьте заявку и мы перезвоним вам в течении 30 минут.
+		input(type='text', name='Имя', placeholder='Ваше имя...', required='')
+		input(type='text', name='Телефон', placeholder='Ваш телефон...', required='')
+		select(name='Услуга')
+			option(disabled='', selected='', value='') Выбирите услугу...
+			option Штукатурка
+			option Шпаклевка
+			option Фасад
+		button.button.button-white Отправить
